@@ -62,7 +62,6 @@ export const cardFormArray = [
     sm: 12,
     required: false,
     joi: Joi.string()
-
       .messages({ "string.pattern.base": `Image url is not vaild` })
       .allow(""),
   },
