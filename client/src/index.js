@@ -18,7 +18,7 @@ import axios from "axios";
 import { Provider } from "react-redux";
 import store from "./store/bigPie";
 
-axios.defaults.baseURL = `http://localhost:8181/api`;
+axios.defaults.baseURL = `/api`;
 
 // axios.defaults.baseURL = `${process.env.REACT_APP_API_URL}/api`;
 axios.interceptors.request.use((config) => {

@@ -1,13 +1,13 @@
 const cards = [
   {
-    title: "Chronicles of Destiny",
+    title: "Jumbo Queen",
     subTitle: "sub card 3",
     description:
       "Follow the intertwined fates of extraordinary individuals on a quest to fulfill their shared destiny.",
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "/public/assets/slide2.jpg",
+      url: "/images/slide2.jpg",
       alt: "alalla",
     },
   },
@@ -19,7 +19,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "/assets/u1.jpg",
+      url: "/images/u1.jpg",
       alt: "alalla",
     },
   },
@@ -31,7 +31,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "/assets/u6.png",
+      url: "/images/u6.png",
       alt: "alalla",
     },
   },
@@ -43,7 +43,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "/assets/u3.jpg",
+      url: "/images/rec1.jpg",
       alt: "alalla",
     },
   },
@@ -56,7 +56,7 @@ const cards = [
     createdYear: "2000",
 
     image: {
-      url: "/assets/u4.jpg",
+      url: "/images/u4.jpg",
       alt: "alalla",
     },
   },
@@ -69,7 +69,7 @@ const cards = [
     createdYear: "2000",
 
     image: {
-      url: "assets/u7.jpg",
+      url: "/images/u7.jpg",
       alt: "alalla",
     },
   },
@@ -81,7 +81,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "assets/home1.jpg",
+      url: "/images/home1.jpg",
       alt: "alalla",
     },
   },
@@ -93,7 +93,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "assets/home2.jpg",
+      url: "/images/home2.jpg",
       alt: "alalla",
     },
   },
@@ -105,7 +105,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "assets/home3.jpg",
+      url: "/images/home3.jpg",
       alt: "alalla",
     },
   },
@@ -117,7 +117,7 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "assets/home4.jpg",
+      url: "/images/home4.jpg",
       alt: "alalla",
     },
   },
@@ -129,19 +129,19 @@ const cards = [
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "assets/slide1.png",
+      url: "/images/slide1.png",
       alt: "alalla",
     },
   },
   {
-    title: "Jumbo Queen",
+    title: "Chronicles of Destiny ",
     subTitle: "sub card 3",
     description:
       "Witness the courageous battle of a brave queen leading her people against towering giants.",
     phone: "0500000000",
     createdYear: "2000",
     image: {
-      url: "assets/slide3.jpg",
+      url: "/images/rec4.jpg",
       alt: "alalla",
     },
   },

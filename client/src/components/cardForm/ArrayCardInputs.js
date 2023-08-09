@@ -62,11 +62,7 @@ export const cardFormArray = [
     sm: 12,
     required: false,
     joi: Joi.string()
-      .pattern(
-        new RegExp(
-          "^(https://www.|http://www.|https://|http://)?[a-zA-Z0-9]{2,}(.[a-zA-Z0-9]{2,})(.[a-zA-Z0-9]{2,})?|(https|assets/u[0-9]+.jpg)$"
-        )
-      )
+
       .messages({ "string.pattern.base": `Image url is not vaild` })
       .allow(""),
   },
