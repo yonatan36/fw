@@ -1,18 +1,21 @@
-import React, { useEffect } from "react";
-import CarouselComponent from "../components/CarouselComp";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import { toast } from "react-toastify";
+import jwt_decode from "jwt-decode";
+import useQueryParams from "../hooks/useQueryParams";
+
+// Material-UI components
 import CircularProgress from "@mui/material/CircularProgress";
+import { Grid, Container, Typography } from "@mui/material";
+
+// Custom components
+import CarouselComponent from "../components/CarouselComp";
 import DeleteDialog from "../components/DialogsPopups/DeleteDialog";
 import EditCardDialog from "../components/DialogsPopups/EditCardDialog";
 import CardComponent from "../components/cardComp";
-import useQueryParams from "../hooks/useQueryParams";
-import { useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import jwt_decode from "jwt-decode";
-import { useState } from "react";
 import Logo from "../components/Logo";
-import axios from "axios";
 import MyLinearProgress from "../components/MyLinearProgress";
-import { Grid, Container, Typography } from "@mui/material";
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [cardsArr, setCardArr] = useState(null);
@@ -23,6 +26,8 @@ function Home() {
   const [cardToEdit, setCardToEdit] = useState([]);
   const [myCardIds, setMyCardIds] = useState([]);
   const [firstLoggedIn, setFirstLoggedIn] = useState(true);
+  const [filterMessage, setFilterMessage] = useState("");
+
   let qparams = useQueryParams();
   const payload = useSelector((bigPie) => bigPie.authSlice.payload);
 
@@ -101,21 +106,25 @@ function Home() {
       filter = qparams.filter;
     }
     if (!originalCardsArr && data) {
-      /*
-        when component loaded and states not loaded
-      */
       setOriginalCardsArr(data);
-      setCardArr(data.filter((card) => card.title.startsWith(filter)));
+      const filteredData = data.filter((card) => card.title.startsWith(filter));
+      setCardArr(filteredData);
       return;
     }
     if (originalCardsArr) {
-      /*
-        when all loaded and states loaded
-      */
       let newOriginalCardsArr = JSON.parse(JSON.stringify(originalCardsArr));
-      setCardArr(
-        newOriginalCardsArr.filter((card) => card.title.startsWith(filter))
+      const filteredData = newOriginalCardsArr.filter((card) =>
+        card.title.startsWith(filter)
       );
+      setCardArr(filteredData);
+
+      if (filteredData.length === 0) {
+        setFilterMessage(
+          "Sorry, we couldn't find any movies matching your search."
+        );
+      } else {
+        setFilterMessage(""); // Clear the message if movies are found
+      }
     }
   };
 
@@ -205,6 +214,17 @@ function Home() {
         maxWidth="lg"
         sx={{ my: 2, display: "flex", marginTop: qparams.filter ? 14 : 0 }}
       >
+        {/* Conditionally render the filter message */}
+        {filterMessage && (
+          <Typography
+            component="h1"
+            fontWeight="700"
+            fontSize="1.7rem"
+            align="left"
+          >
+            {filterMessage}
+          </Typography>
+        )}
         <Grid
           container
           spacing={1}
@@ -218,7 +238,7 @@ function Home() {
                 title={item.title}
                 subTitle={item.subTitle}
                 phone={item.phone}
-                img={item.image ? item.image.url : ""} // http://localhost:8181/assets/jpg.1
+                img={item.image ? item.image.url : ""}
                 description={item.description}
                 createdYear={item.createdYear}
                 createdAt={item.createdAt}

@@ -1,4 +1,6 @@
 import React from "react";
+
+// Material-UI components
 import {
   Dialog,
   DialogTitle,
@@ -18,6 +20,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
 import LogoDialog from "../LogoDialogs";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+
 const CreateDialog = ({ open, onClose, openCreate }) => {
   const handleClick = () => {
     onClose();

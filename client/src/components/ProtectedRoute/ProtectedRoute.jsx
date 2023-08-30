@@ -30,7 +30,7 @@ const ProtectedRoute = ({ element }) => {
     return element;
   } else {
     // If not authenticated, redirect to the "About" page
-    toast.error("Oops! plese loogin.");
+    toast.error("Oops! please loogin.");
     return <Navigate to={ROUTES.ABOUT} />;
   }
 };

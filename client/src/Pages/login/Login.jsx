@@ -1,26 +1,38 @@
+// React imports
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Material-UI components
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import LoginIcon from "@mui/icons-material/Login";
-import { LoginArray } from "./ArrayLogin";
-import ROUTES from "../../routes/ROUTES";
-import axios from "axios";
-import { TextField } from "@mui/material";
-import { toast } from "react-toastify";
-import { feildValidation } from "../../validation/feildValidation";
-import { useNavigate } from "react-router-dom";
-import RegisterPage from "../registerPage/Register";
-import PasswordField from "../../components/PasswordField";
+import TextField from "@mui/material/TextField";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import useLoggedIn from "../../hooks/useLoggedIn";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+
+// Material-UI icons
+import LoginIcon from "@mui/icons-material/Login";
 import CloseIcon from "@mui/icons-material/Close";
+
+// Application-specific imports
+import ROUTES from "../../routes/ROUTES";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { feildValidation } from "../../validation/feildValidation";
+import RegisterPage from "../registerPage/Register";
+import PasswordField from "../../components/PasswordField";
 import LogoDialog from "../../components/LogoDialogs";
-import { Dialog, DialogContent, Typography, IconButton } from "@mui/material";
+
+// Custom hooks and data
+import { LoginArray } from "./ArrayLogin";
+import useLoggedIn from "../../hooks/useLoggedIn";
 
 const Login = ({ openLogin, setOpenLogin }) => {
   const [formData, setFormData] = useState({});

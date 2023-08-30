@@ -1,9 +1,13 @@
+import React from "react";
+
 import Slide from "@mui/material/Slide";
 import { forwardRef } from "react";
+
+// Material-UI components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CloseIcon from "@mui/icons-material/Close";
-import React from "react";
+
 import {
   Dialog,
   DialogContent,
@@ -13,6 +17,7 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
+
 const Transition = forwardRef((props, ref) => {
   return <Slide direction="down" ref={ref} {...props} />;
 });

@@ -48,7 +48,7 @@ export const registerArray = [
     name: "password",
     id: "password",
     type: "password",
-    sm: 12,
+    sm: 6,
     required: true,
     joi: Joi.string()
       .pattern(

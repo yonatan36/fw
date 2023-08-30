@@ -12,6 +12,7 @@ const CustomError = require("../../utils/CustomError");
 const permissionsMiddleware = require("../../middleware/permissionsMiddleware");
 const authmw = require("../../middleware/authMiddleware");
 const User = require("../../model/users/Users");
+const { remove } = require("../../model/users/Name");
 //http://localhost:8181/api/users/register
 //register
 router.post("/register", async (req, res) => {
@@ -78,13 +79,14 @@ router.put(
         id,
         updateNormalUser
       );
-      // const token = await jwt.generateToken({
-      //   _id: userData._id,
-      //   isAdmin: userData.isAdmin,
-      //   isBusiness: userData.isBusiness,
-      // });
+      const token = await jwt.generateToken({
+        _id: updateUser._id,
+        isAdmin: updateUser.isAdmin,
+        isBusiness: updateUser.isBusiness,
+      });
       res.status(200).json({
         msg: `user - ${updateUser.name.firstName} ${updateUser.name.lastName} update!`,
+        token: token,
       });
     } catch (err) {
       res.status(400).json({ error: err.message });

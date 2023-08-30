@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode";
 
 const useLoggedIn = () => {
   const dispatch = useDispatch();
-  return async () => {
+  return () => {
     try {
       const token = localStorage.getItem("token");
       if (!token) {

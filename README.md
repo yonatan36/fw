@@ -6,6 +6,7 @@ The project aims to create a web application called "yoonflix" that allows users
 
 - React
 - Material UI
+- mongoose
 - MongoDB
 - joi
 - axios

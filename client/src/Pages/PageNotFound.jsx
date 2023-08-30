@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Typography, Button } from "@mui/material";
-import { Link } from "react-router-dom"; // You can use react-router-dom if you are using it in your project.
+import { Link } from "react-router-dom";
 
 const PageNotFound = () => {
   return (

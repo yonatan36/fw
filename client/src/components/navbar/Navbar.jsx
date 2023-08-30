@@ -1,33 +1,42 @@
+// React imports
 import * as React from "react";
+import { useState, useEffect } from "react";
+
+// Material-UI components
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import { useSelector } from "react-redux";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
+import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import ROUTES from "../../routes/ROUTES";
-import NavLinkComponent from "./NavLinkComponent";
+
+// Material-UI icons
+import MenuIcon from "@mui/icons-material/Menu";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LoginIcon from "@mui/icons-material/Login";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Profile from "../../Pages/profile/Profile";
 import CreateIcon from "@mui/icons-material/Create";
 import InfoIcon from "@mui/icons-material/Info";
+import LogoutIcon from "@mui/icons-material/Logout";
+
+// Custom components and pages
+import NavLinkComponent from "./NavLinkComponent";
+import Profile from "../../Pages/profile/Profile";
 import Login from "../../Pages/login/Login";
 import RegisterPage from "../../Pages/registerPage/Register";
-import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
-import LogoutIcon from "@mui/icons-material/Logout";
 import SearchComp from "../SearchComp";
+
+// Other imports
+import { useSelector } from "react-redux";
+import ROUTES from "../../routes/ROUTES";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useTheme } from "@mui/material";
 
@@ -118,7 +127,7 @@ const ResponsiveAppBar = ({ darkMode, onThemeChange }) => {
     }
   };
 
-  const onUpdate = (url, alt, firstName) => {
+  const onUpdate = (url, alt, firstName, isBiz) => {
     setAvatar({
       url,
       alt,
@@ -396,11 +405,7 @@ const ResponsiveAppBar = ({ darkMode, onThemeChange }) => {
               <Box sx={{ flexGrow: 0, ml: 1, mr: 1.5 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      alt={avatar.alt}
-                      src={avatar.url}
-                      sx={{ borderRadius: 0 }}
-                    />
+                    <Avatar alt={avatar.alt} src={avatar.url} />
                   </IconButton>
                 </Tooltip>
                 <Menu

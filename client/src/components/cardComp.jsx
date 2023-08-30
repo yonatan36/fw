@@ -1,12 +1,17 @@
+// Material-UI icons
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import DeleteIcon from "@mui/icons-material/Delete";
-import StarRating from "./StarRatingComp";
-import CardDialog from "../components/DialogsPopups/CardDialog";
 import EditIcon from "@mui/icons-material/Edit";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+
+// Custom components
+import StarRating from "./StarRatingComp";
+import CardDialog from "../components/DialogsPopups/CardDialog";
+
+// Axios and React imports
 import axios from "axios";
 import { useState } from "react";
-
+// Material-UI components
 import {
   Card,
   CardActionArea,
@@ -17,6 +22,8 @@ import {
   IconButton,
   useMediaQuery,
 } from "@mui/material";
+
+// PropTypes for type checking
 import PropTypes from "prop-types";
 
 const CardComponent = ({

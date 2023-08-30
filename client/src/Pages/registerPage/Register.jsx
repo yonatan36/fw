@@ -1,32 +1,37 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+
+// Material-UI components and icons
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import Container from "@mui/material/Container";
-import { TextField, FormControlLabel, Typography } from "@mui/material";
-import { toast } from "react-toastify";
-import CloseIcon from "@mui/icons-material/Close";
-import axios from "axios";
-
-import Login from "../login/Login";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-
-import { feildValidation } from "../../validation/feildValidation";
-import { registerArray } from "../registerPage/ArrayInputs";
-import BizDialog from "../../components/DialogsPopups/BizDialog";
-import LogoDialog from "../../components/LogoDialogs";
-
 import {
+  TextField,
+  FormControlLabel,
+  Typography,
   Dialog,
   DialogContent,
   DialogActions,
   Checkbox,
   IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+
+// Custom components and hooks
+import Login from "../login/Login";
+import BizDialog from "../../components/DialogsPopups/BizDialog";
+import LogoDialog from "../../components/LogoDialogs";
+
+// Validation and data
+import { feildValidation } from "../../validation/feildValidation";
+import { registerArray } from "../registerPage/ArrayInputs";
 
 const RegisterPage = ({ openRegister, setOpenRegister }) => {
   const [formData, setFormData] = useState({});

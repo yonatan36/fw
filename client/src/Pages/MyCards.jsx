@@ -1,3 +1,10 @@
+import * as React from "react";
+import { Fragment, useState, forwardRef, useEffect } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
+import { toast } from "react-toastify";
+
 import {
   Container,
   Typography,
@@ -9,23 +16,19 @@ import {
 import Dialog from "@mui/material/Dialog";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
-import { Fragment, useState, forwardRef, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import CloseIcon from "@mui/icons-material/Close";
+import VideoCallIcon from "@mui/icons-material/VideoCall";
+import Avatar from "@mui/material/Avatar";
+
 import EditCardDialog from "../components/DialogsPopups/EditCardDialog";
 import DeleteDialog from "../components/DialogsPopups/DeleteDialog";
-import jwt_decode from "jwt-decode";
-import { useSelector } from "react-redux";
 import CardForm from "../components/cardForm/CreateCard";
 import Logo from "../components/Logo";
 import MyLinearProgress from "../components/MyLinearProgress";
 import CardComponent from "../components/cardComp";
-import { toast } from "react-toastify";
 import CreateDialog from "../components/DialogsPopups/CreateDialog";
-import axios from "axios";
-import VideoCallIcon from "@mui/icons-material/VideoCall";
-import Avatar from "@mui/material/Avatar";
 
 // Transition component for the dialog
 const Transition = forwardRef((props, ref) => {

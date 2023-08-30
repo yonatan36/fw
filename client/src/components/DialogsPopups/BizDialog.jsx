@@ -1,4 +1,6 @@
 import React from "react";
+
+// Material-UI components
 import {
   Dialog,
   DialogTitle,
@@ -12,7 +14,10 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+
 import LogoDialog from "../LogoDialogs";
+
+// Material-UI icons
 import EditIcon from "@mui/icons-material/Edit";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";

@@ -37,7 +37,7 @@ const SuperProtectedRoute = ({ element, isAdmin, isBusiness }) => {
       return <Navigate to={ROUTES.ABOUT} />;
     }
   } else {
-    toast.error("Oops! plese loogin.");
+    toast.error("Oops! please loogin.");
     return <Navigate to={ROUTES.ABOUT} />;
   }
 };
