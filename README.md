@@ -1,50 +1,75 @@
-# Movies-app React
+# Responsive movie app
 
-The project aims to create a web application called "yoonflix" that allows users to manage and share movies.
+The goal of the project is to create a web application called "yoonflix" that allows users to manage and share movies.
 
 ## The project was built using the following technologies:
 
-- React
-- Material UI
-- mongoose
+- Respond
+- Material user interface
+- Mongoose
 - MongoDB
-- joi
-- axios
+- Joy
+- Axios
 - jwt-decode
-- react-router-dom
-- Express Server
+- response-router-dom
+- Express server
 - nodeJS
 
-## Running the Project
+## Running the project
 
 To run the project, follow these steps:
 
-1. to download the project use git clone or Extract the folder from the provided zip file and after Navigate to the extracted project folder .
-2. Open the project in your preferred code editor in the client side and in the server side.
-3. Install the required packages in the client side by running the command `npm install`.
-4. start the client side: using the command `npm start`
-5. Start the server side by running the command `npm run dev`
-6. Make sure that the data base was created in the mongodb, and import the JSON files to the collections
-7. Welcome! access the application in your web browser at http://localhost:3000.
+1. To download the project use git clone or extract the folder from the provided zip file and then navigate to the extracted project folder.
+2. Open the project in your favorite client-side and server-side code editor.
+3. Install the required packages on the client side by running the `npm install` command.
+4. Start the client side: using the `npm start` command
+5. Start the server side by running the `npm run dev` command
+6. Make sure the database is created in mongodb, and import the JSON files into collections
+7. Welcome! Access the application in your web browser at http://localhost:3000.
 
-## User Interface
+## user interface
 
-The user interface of the movies site has the following features:
+The user interface of the movie site has the following features:
 
-1. When the user is will connect, the signup and login links will change to Avatar picture. And the favoriets link will be added that will lead to the cards page
+1. When the user logs in, the registration and login links will change to an avatar image. And a favorites link will be added that will lead to the card page
    Favorites of the surfer.
-2. If the user is a business user type, a link called "MY MOVIES" will be added to the navigation bar. Clicking on it will lead to the movies page that the user created.
-3. If the user is of the admin type he can create edit and delete all the movies in the site.
+2. If the user is a business or Admin , a link named "My Movies" will be added to the navigation bar. Clicking on it will lead to the page of movies that the user created.
 
-## Permissions
+## User types and permissions
 
-The permissions for different user types are as follows:
+The yoonflix app has three types of ready-made users, each with specific permissions and capabilities. You can use the following email and password combinations to log in for any user type:
 
-1. A user who is not logged in can only can use the about page.
-2. A logged-in user that is not a business-type or admin can see movie and mark a movie as preferred.
-3. A logged-in user that is a business type can see the "Edit" and "Delete" icons only for the movies he has created. He can edit and delete only his own movies.
-4. An admin-type user can edit and delete any movie .
+### Normal user
 
-## Contact
+- Description: Regular users have basic access to the app's features and can browse movies.
+- Email: normal@gmail.com
+- Password: Aa123456
+- Permissions:
+  - Watching movies
+  - Mark movies as favorites
 
-If you have a question about the project - I'd love to be in touch! my email: yonatantaub36@gmail.com
+### Business user
+
+- Description: Business users have additional capabilities beyond normal users.
+- Email: business@gmail.com
+- Password: Aa123456
+- Permissions:
+  - Watching movies
+  - Mark movies as favorites
+  - Create, edit and delete their videos
+
+### Admin user
+
+- Description: Admin users have the highest level of access and control over the application.
+- Email: admin@gmail.com
+- Password: Aa123456
+- Permissions:
+  - Watching movies
+  - Mark movies as favorites
+  - Create, edit and delete any movie on the site
+
+These types of users and their corresponding permissions guarantee a distinct and secure experience for each type of user on the yoonflix platform.
+
+## contact
+
+If you have a question about the project - I'd love to be in touch! My email: yonantantaub36@gmail.com
