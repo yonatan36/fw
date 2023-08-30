@@ -1,25 +1,19 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import { useSelector } from "react-redux";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-
-import { TextField } from "@mui/material";
 import { toast } from "react-toastify";
 import axios from "axios";
-import CloseIcon from "@mui/icons-material/Close";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import { feildValidation } from "../../validation/feildValidation";
-import { profileArray } from "../profile/ArrayInputs";
-import LogoDialog from "../../components/LogoDialogs";
 
-import useLoggedIn from "../../hooks/useLoggedIn";
+// Material-UI components
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CloseIcon from "@mui/icons-material/Close";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 import {
+  TextField,
   Dialog,
   DialogContent,
   DialogActions,
@@ -27,6 +21,15 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+
+// Custom components and hooks
+import LogoDialog from "../../components/LogoDialogs";
+import BizDialog from "../../components/DialogsPopups/BizDialog";
+import useLoggedIn from "../../hooks/useLoggedIn";
+import { feildValidation } from "../../validation/feildValidation";
+import { profileArray } from "../profile/ArrayInputs";
 
 const Profile = ({ openProfile, setOpenProfile, avatar, onUpdate }) => {
   const [formData, setFormData] = useState({});
@@ -35,6 +38,7 @@ const Profile = ({ openProfile, setOpenProfile, avatar, onUpdate }) => {
   const [formValid, setFormValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [inputState, setInputState] = useState({});
+  const [openBizDialog, setOpenBizDialog] = useState(false);
   const loggedIn = useLoggedIn();
   const { isLoggedIn } = useSelector(
     (bigPieBigState) => bigPieBigState.authSlice
@@ -67,6 +71,10 @@ const Profile = ({ openProfile, setOpenProfile, avatar, onUpdate }) => {
       [name]: fieldValue,
     }));
 
+    if (name === "isBusiness") {
+      // If the checkbox is checked, open the business dialog
+      setOpenBizDialog(checked);
+    }
     const fieldSchema = profileArray.find((field) => field.name === name)?.joi;
     if (fieldSchema) {
       const error = feildValidation(fieldSchema, fieldValue, name);
@@ -151,9 +159,12 @@ const Profile = ({ openProfile, setOpenProfile, avatar, onUpdate }) => {
         _id: undefined,
         address: undefined,
       };
+      localStorage.setItem(
+        "token",
+        (await axios.put(`/users/${_id}`, updatedCard)).data.token
+      );
 
-      const { data } = await axios.put(`/users/${_id}`, updatedCard);
-      localStorage.setItem("token", data.token);
+      loggedIn();
       setIsLoading(false);
       loggedIn();
       handleClose(false);
@@ -164,12 +175,14 @@ const Profile = ({ openProfile, setOpenProfile, avatar, onUpdate }) => {
     } catch (err) {
       setIsLoading(false);
       toast.error(`Oops! update failed. Please try again.`);
-      console.log("Register error:", err);
     }
   };
 
   const handleClose = () => setOpenProfile(false);
 
+  const handleBizDialogClose = () => {
+    setOpenBizDialog(false);
+  };
   return (
     <React.Fragment>
       <Dialog open={openProfile} onClose={handleClose}>
@@ -315,6 +328,8 @@ const Profile = ({ openProfile, setOpenProfile, avatar, onUpdate }) => {
           </Grid>
         </DialogActions>
       </Dialog>
+
+      <BizDialog open={openBizDialog} onClose={handleBizDialogClose} />
     </React.Fragment>
   );
 };
