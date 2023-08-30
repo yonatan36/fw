@@ -13,6 +13,9 @@
       "street": "nof ha hof",
       "houseNumber": 255
     },
+    "image":{
+"url":"https://c8.alamy.com/comp/2J3B2T7/3d-illustration-of-smiling-businessman-close-up-portrait-cute-cartoon-man-avatar-character-face-isolated-on-white-background-2J3B2T7.jpg"
+    },
     "isAdmin": true,
      "isBusiness": true
 
@@ -30,6 +33,9 @@
       "city": "Ashkeluna",
       "street": "nof ha hof",
       "houseNumber": 255
+    },
+        "image":{
+"url":"https://c7.alamy.com/comp/2DA7D36/the-fashionable-man-looks-to-the-side-2DA7D36.jpg"
     }
   },
   {
