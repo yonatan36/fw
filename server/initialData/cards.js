@@ -17,7 +17,7 @@ const cards = [
     description:
       "Venture into the uncharted realms of the supernatural alongside a team of paranormal investigators.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "1998",
     image: {
       url: "/images/u1.jpg",
       alt: "alalla",
@@ -29,7 +29,7 @@ const cards = [
     description:
       "Witness the extraordinary journey of a young hero mastering ancient magic to confront an ancient evil.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2017",
     image: {
       url: "/images/u6.png",
       alt: "alalla",
@@ -41,7 +41,7 @@ const cards = [
     description:
       "Experience a captivating tale of forbidden love and timeless devotion set in a picturesque town.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2019",
     image: {
       url: "/images/rec1.jpg",
       alt: "alalla",
@@ -53,7 +53,7 @@ const cards = [
     description:
       "Unearth the ancient secrets of an enigmatic desert as a courageous archaeologist delves into hidden treasures and long-forgotten civilizations.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2010",
 
     image: {
       url: "/images/u4.jpg",
@@ -66,7 +66,7 @@ const cards = [
     description:
       "Join a group of intrepid adventurers racing against time to find the elusive seventh key and prevent impending catastrophe.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2020",
 
     image: {
       url: "/images/u7.jpg",
@@ -79,7 +79,7 @@ const cards = [
     description:
       "A gripping tale of survival in a world plagued by sand and dust storms.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2020",
     image: {
       url: "/images/home1.jpg",
       alt: "alalla",
@@ -91,7 +91,7 @@ const cards = [
     description:
       "Uncover the secrets of a legendary island inhabited by ancient creatures.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2023",
     image: {
       url: "/images/home2.jpg",
       alt: "alalla",
@@ -103,7 +103,7 @@ const cards = [
     description:
       "Embark on a thrilling adventure across treacherous waters with ruthless pirates vying for treasures.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2016",
     image: {
       url: "/images/home3.jpg",
       alt: "alalla",
@@ -115,7 +115,7 @@ const cards = [
     description:
       "When a group of friends is catapulted through time, they must navigate different eras to find their way back home.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2003",
     image: {
       url: "/images/home4.jpg",
       alt: "alalla",
@@ -127,7 +127,7 @@ const cards = [
     description:
       "When a group of friends is catapulted through time, they must navigate different eras to find their way back home.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "2009",
     image: {
       url: "/images/slide1.png",
       alt: "alalla",
@@ -139,7 +139,7 @@ const cards = [
     description:
       "Witness the courageous battle of a brave queen leading her people against towering giants.",
     phone: "0500000000",
-    createdYear: "2000",
+    createdYear: "1999",
     image: {
       url: "/images/rec4.jpg",
       alt: "alalla",

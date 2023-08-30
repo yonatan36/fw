@@ -29,6 +29,7 @@ import { feildValidation } from "../../validation/feildValidation";
 import RegisterPage from "../registerPage/Register";
 import PasswordField from "../../components/PasswordField";
 import LogoDialog from "../../components/LogoDialogs";
+import ShowUsersDialog from "../../components/DialogsPopups/ShowUsersDialog";
 
 // Custom hooks and data
 import { LoginArray } from "./ArrayLogin";
@@ -39,7 +40,7 @@ const Login = ({ openLogin, setOpenLogin }) => {
   const [formError, setFormError] = useState({});
   const [fieldToFocus, setFieldToFocus] = useState(0);
   const [formValid, setFormValid] = useState(false);
-
+  const [showUsers, SetShowUsers] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
   const passwordRef = useRef();
@@ -115,6 +116,12 @@ const Login = ({ openLogin, setOpenLogin }) => {
     setOpenRegister(true);
   };
 
+  const handleUsersDialogClose = () => {
+    SetShowUsers(false);
+  };
+  const handleUsersDialogOpen = () => {
+    SetShowUsers(true);
+  };
   return (
     <React.Fragment>
       <Dialog open={openLogin} onClose={handleClose}>
@@ -161,6 +168,13 @@ const Login = ({ openLogin, setOpenLogin }) => {
         </Box>
         <DialogContent>
           <Container maxWidth="xs">
+            <Button
+              type="button"
+              variant="outlined"
+              onClick={handleUsersDialogOpen}
+            >
+              users
+            </Button>
             <Box
               sx={{
                 display: "flex",
@@ -242,6 +256,7 @@ const Login = ({ openLogin, setOpenLogin }) => {
           setOpenRegister={setOpenRegister}
         />
       )}
+      <ShowUsersDialog open={showUsers} onClose={handleUsersDialogClose} />
     </React.Fragment>
   );
 };
