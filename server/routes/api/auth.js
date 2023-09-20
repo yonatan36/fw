@@ -6,13 +6,13 @@ const idValidationServise = require("../../validation/idValidationService");
 const userAccessDataService = require("../../model/users/models/userAccessData");
 const usersServiceModel = require("../../model/users/usersService");
 const normalizeUser = require("../../model/users/helpers/normalizationUser");
-const chalk = require("chalk");
 const jwt = require("../../config/jwt");
 const CustomError = require("../../utils/CustomError");
 const permissionsMiddleware = require("../../middleware/permissionsMiddleware");
 const authmw = require("../../middleware/authMiddleware");
 const User = require("../../model/users/Users");
 const { remove } = require("../../model/users/Name");
+
 //http://localhost:8181/api/users/register
 //register
 router.post("/register", async (req, res) => {
@@ -56,6 +56,7 @@ router.post("/login", async (req, res) => {
     res.status(400).json(err.message);
   }
 });
+
 //http://localhost:8181/api/users/:id
 //update user
 router.put(
